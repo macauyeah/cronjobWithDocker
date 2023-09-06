@@ -12,5 +12,5 @@ flock -n /tmp/pingtest.filelock ./run.sh
 
 set crontab to run it in every one minutes;
 ```
-*/1 * * * flock -n /tmp/pingtest.filelock ./run.sh >> /tmp/pingtest.out
+*/1 * * * * flock -n /tmp/pingtest.filelock ./run.sh >> /tmp/pingtest.out
 ```
