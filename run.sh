@@ -1,7 +1,8 @@
 #!/bin/bash
 
 echo running script at `date`
-timeout 5s sudo docker container run --rm pingtest -c 100 
+#timeout --signal=SIGINT 10s docker container run --rm pingtest -c 20
+timeout --signal=SIGINT 2m docker container run --rm pingtest
 exitCode=$?
 if [[ $exitCode -eq 124 ]]; then
     echo "timeout"

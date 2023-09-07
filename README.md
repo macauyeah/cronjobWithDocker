@@ -7,10 +7,10 @@ build a docker image with ping command, and timeout in two minutes
 
 run following command in multiple terminals, only the first one will output ping message
 ```
-flock -n /tmp/pingtest.filelock ./run.sh
+sudo flock -n /tmp/pingtest.filelock ${PWD}/run.sh
 ```
 
-set crontab to run it in every one minutes;
+set root crontab to run it in every one minutes;
 ```
 */1 * * * * flock -n /tmp/pingtest.filelock /pathToYourScript/run.sh >> /tmp/pingtest.out
 ```
